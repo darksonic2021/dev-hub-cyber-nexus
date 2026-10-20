@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dev HUB SENATI — Cyber Nexus: portal educativo con recursos de programación, diseño y ciberseguridad.">
+  <title>Dev HUB SENATI — Cyber Nexus</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+
+  <!-- ===== ENCABEZADO ===== -->
+  <header class="site-header" id="inicio">
+    <div class="container header-inner">
+      <a href="#inicio" class="brand">
+        <span class="brand-mark">&lt;/&gt;</span>
+        <span class="brand-text">Dev HUB <strong>SENATI</strong><em>Cyber Nexus</em></span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#recursos">Recursos</a></li>
+          <li><a href="#equipo">Equipo</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== SECCIÓN PRINCIPAL ===== -->
+    <section class="hero">
+      <div class="hero-glow hero-glow--cyan" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow--purple" aria-hidden="true"></div>
+
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <p class="eyebrow">Proyecto colaborativo · SENATI</p>
+          <h1>Tu portal de recursos <span class="gradient-text">Cyber Nexus</span></h1>
+          <p class="lead">
+            Explora guías, plantillas y herramientas de programación, diseño y
+            ciberseguridad, organizadas para que aprendas más rápido.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#recursos" class="btn btn--primary">Explorar catálogo</a>
+            <a href="#equipo" class="btn btn--ghost">Conoce al equipo</a>
+          </div>
+
+          <dl class="hero-stats">
+            <div><dt>Recursos</dt><dd>12+</dd></div>
+            <div><dt>Categorías</dt><dd>4</dd></div>
+            <div><dt>Estudiantes</dt><dd>2</dd></div>
+          </dl>
+        </div>
+
+        <aside class="hero-panel" aria-hidden="true">
+          <div class="terminal">
+            <div class="terminal-bar"><span></span><span></span><span></span></div>
+            <pre><code><span class="c-purple">const</span> hub = <span class="c-purple">new</span> <span class="c-cyan">CyberNexus</span>();
+hub.<span class="c-cyan">conectar</span>({
+  campus: <span class="c-green">"SENATI"</span>,
+  modo: <span class="c-green">"aprendizaje"</span>
+});
+<span class="c-comment">// status: online</span></code></pre>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===== CATÁLOGO DE RECURSOS ===== -->
+    <section class="catalog" id="recursos">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Catálogo</p>
+          <h2>Recursos para tu ruta de aprendizaje</h2>
+          <p class="section-sub">Filtra por categoría o busca por nombre. Los resultados se actualizan en tiempo real.</p>
+        </header>
+
+        <!-- Buscador -->
+        <div class="catalog-toolbar">
+          <div class="search-box">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input
+              type="search"
+              id="searchInput"
+              class="search-input"
+              placeholder="Buscar recursos..."
+              autocomplete="off"
+              aria-label="Buscar recursos">
+            <button type="button" id="clearSearch" class="clear-btn" hidden aria-label="Limpiar búsqueda">✕</button>
+          </div>
+          <p class="results-count" id="resultsCount" role="status" aria-live="polite">Mostrando todos los recursos</p>
+        </div>
+
+        <!-- Filtros por categoría -->
+        <div class="filters" id="categoryFilters" role="group" aria-label="Filtrar por categoría">
+          <button type="button" class="filter-chip is-active" data-category="all" aria-pressed="true">Todos</button>
+          <button type="button" class="filter-chip" data-category="programacion" aria-pressed="false">Programación</button>
+          <button type="button" class="filter-chip" data-category="frontend" aria-pressed="false">Frontend</button>
+          <button type="button" class="filter-chip" data-category="ciberseguridad" aria-pressed="false">Ciberseguridad</button>
+          <button type="button" class="filter-chip" data-category="herramientas" aria-pressed="false">Herramientas</button>
+        </div>
+
+        <!-- Grid de recursos -->
+        <div class="resources-grid" id="resourcesGrid">
+
+          <article class="resource-card" data-category="programacion" data-title="Fundamentos de JavaScript">
+            <span class="card-tag tag-js">Programación</span>
+            <h3>Fundamentos de JavaScript</h3>
+            <p>Variables, funciones, arrays y objetos explicados con ejercicios prácticos.</p>
+            <a href="#" class="card-link">Ver recurso →</a>
+          </article>
+
+          <article class="resource-card" data-category="frontend" data-title="Layout moderno con CSS Grid">
+            <span class="card-tag tag-css">Frontend</span>
+            <h3>Layout moderno con CSS Grid</h3>
+            <p>Construye rejillas responsivas y componentes flexibles sin frameworks.</p>
+            <a href="#" class="card-link">Ver recurso →</a>
+          </article>
+
+          <article class="resource-card" data-category="ciberseguridad" data-title="Introducción a la ciberseguridad">
+            <span class="card-tag tag-sec">Ciberseguridad</span>
+            <h3>Introducción a la ciberseguridad</h3>
+            <p>Conceptos básicos de amenazas, contraseñas seguras y navegación protegida.</p>
+            <a href="#" class="card-link">Ver recurso →</a>
+          </article>
+
+          <article class="resource-card" data-category="herramientas" data-title="Git y GitHub desde cero">
+            <span class="card-tag tag-tools">Herramientas</span>
+            <h3>Git y GitHub desde cero</h3>
+            <p>Control de versiones, ramas y flujo de trabajo colaborativo en equipo.</p>
+            <a href="#" class="card-link">Ver recurso →</a>
+          </article>
+
+          <article class="resource-card" data-category="frontend" data-title="Diseño responsive móvil primero">
+            <span class="card-tag tag-css">Frontend</span>
+            <h3>Diseño responsive móvil primero</h3>
+            <p>Media queries, unidades fluidas y estrategias para cualquier pantalla.</p>
+            <a href="#" class="card-link">Ver recurso →</a>
+          </article>
+
+          <article class="resource-card" data-category="programacion" data-title="Lógica de programación con ejercicios">
+            <span class="card-tag tag-js">Programación</span>
+            <h3>Lógica de programación con ejercicios</h3>
+            <p>Condicionales, bucles y resolución de problemas paso a paso.</p>
+            <a href="#" class="card-link">Ver recurso →</a>
+          </article>
+
+          <article class="resource-card" data-category="ciberseguridad" data-title="Buenas prácticas en formularios">
+            <span class="card-tag tag-sec">Ciberseguridad</span>
+            <h3>Buenas prácticas en formularios</h3>
+            <p>Validación de datos, manejo de eventos y errores comunes al enviar información.</p>
+            <a href="#" class="card-link">Ver recurso →</a>
+          </article>
+
+          <article class="resource-card" data-category="herramientas" data-title="Atajos y extensiones para desarrolladores">
+            <span class="card-tag tag-tools">Herramientas</span>
+            <h3>Atajos y extensiones para desarrolladores</h3>
+            <p>Trabaja más rápido con las herramientas del editor y del navegador.</p>
+            <a href="#" class="card-link">Ver recurso →</a>
+          </article>
+
+        </div>
+
+        <p class="empty-state" id="emptyState" hidden>
+          No se encontraron recursos con esa búsqueda.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== EQUIPO ===== -->
+    <section class="team" id="equipo">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Equipo</p>
+          <h2>Quiénes construyen Cyber Nexus</h2>
+          <p class="section-sub">Dos estudiantes, un objetivo: aprender construyendo.</p>
+        </header>
+
+        <div class="team-grid">
+          <article class="team-card">
+            <div class="avatar avatar--cyan">JS</div>
+            <h3>Jorge Sanchez</h3>
+            <p class="role">HTML · CSS · Diseño Frontend</p>
+            <p class="bio">Encargado de la interfaz, el estilo visual y la experiencia responsive del portal.</p>
+            <ul class="skills">
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>UI Design</li>
+            </ul>
+          </article>
+
+          <article class="team-card">
+            <div class="avatar avatar--purple">AO</div>
+            <h3>Aydan Ormeño</h3>
+            <p class="role">JavaScript · Funcionalidades</p>
+            <p class="bio">Encargado de la lógica del buscador, los filtros y la interacción del catálogo.</p>
+            <ul class="skills">
+              <li>JavaScript</li>
+              <li>DOM</li>
+              <li>Lógica</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA / CONTACTO ===== -->
+    <section class="cta" id="contacto">
+      <div class="container cta-inner">
+        <h2>¿Listo para conectar con el Nexus?</h2>
+        <p>Únete a la comunidad estudiantil del SENATI y comparte tus propios recursos.</p>
+        <a href="#recursos" class="btn btn--primary">Empezar ahora</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== PIE DE PÁGINA ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><strong>Dev HUB SENATI</strong> — Cyber Nexus</p>
+      <p>Proyecto colaborativo · Jorge Sanchez &amp; Aydan Ormeño · 2026</p>
+    </div>
+  </footer>
+
+</body>
+</html>
